@@ -1,2 +1,1 @@
-# business-pro
-Extra modules for Business websites
+# Pootle Pagebuilder Business Pack Pro
