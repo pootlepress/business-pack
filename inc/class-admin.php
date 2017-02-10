@@ -64,9 +64,7 @@ class Pootle_Pagebuilder_Business_Pack_Admin{
 	 */
 	public function custom_field( $id, $args = array() ) {
 		?>
-		<input type="hidden" name="panelsStyle[<?php echo esc_attr( $id ) ?>]"
-			         data-style-field="<?php echo esc_attr( $id ) ?>"
-			         data-style-field-type="multi-setting"/>
+		<input type="hidden"/>
 		<?php
 		$args = wp_parse_args( $args, array(
 			'fields' => 'Content:textarea',
@@ -75,10 +73,23 @@ class Pootle_Pagebuilder_Business_Pack_Admin{
 		) );
 		$fs = explode( '|', $args['fields'] );
 
-		echo "<button onclick='$args[callback]'>$args[button]</button>";
-
+		$radio_attrs = " name='panelsStyle[$id]'
+			         data-style-field='$id'
+			         data-style-field-type='multi-setting'";
 		?>
-		<div class="ui-section">
+		</span>
+		<span style="width: 100%;max-width: 100%;">
+
+		<input type="radio" id="ppb-biz-ta-none" <?php echo $radio_attrs ?>>
+		<label for="ppb-biz-ta-none">		None		</label>
+
+		<input type="radio" class="ppb-biz-ta" id="ppb-biz-ta-tabs" <?php echo $radio_attrs ?>>
+		<label for="ppb-biz-ta-tabs">		Tabs		</label>
+
+		<input type="radio" class="ppb-biz-ta" id="ppb-biz-ta-accordion" <?php echo $radio_attrs ?>>
+		<label for="ppb-biz-ta-accordion">	Accordion	</label>
+
+		<div class="ui-section-ref" style="display:none" >
 			<?php
 			foreach( $fs as $f ) {
 				$field = explode( ':', $f );
@@ -90,6 +101,9 @@ class Pootle_Pagebuilder_Business_Pack_Admin{
 			}
 			?>
 		</div>
+		<section class="ppb-biz-ta-data">
+			<button onclick='ppbBizProCustomField(this)'><?php echo $args['button'] ?></button>
+		</section>
 		<?php
 	}
 
@@ -104,24 +118,6 @@ class Pootle_Pagebuilder_Business_Pack_Admin{
 
 		wp_enqueue_style( $token . '-admin-css', $url . '/assets/admin.css' );
 		wp_enqueue_script( $token . '-admin-js', $url . '/assets/admin.js', array( 'jquery' ) );
-	}
-
-	/**
-	 * Adds row settings panel fields
-	 * @param array $fields Fields to output in row settings panel
-	 * @return array Tabs
-	 * @filter pootlepb_row_settings_fields
-	 * @since 	1.0.0
-	 */
-	public function row_settings_fields( $fields ) {
-		$fields[ $this->token . '_sample_color' ] = array(
-			'name' => 'Sample color',
-			'type' => 'color',
-			'priority' => 1,
-			'tab' => $this->token,
-			'help-text' => 'This is a sample boilerplate field, Sets 12px outline color.'
-		);
-		return $fields;
 	}
 
 	/**
@@ -159,17 +155,7 @@ class Pootle_Pagebuilder_Business_Pack_Admin{
 
 		// Tabs fields
 
-		$fields[ $this->token . '-tab_data' ] = array(
-			'name'     => 'Tabs',
-			'fields'     => 'Title:text|Content:textarea',
-			'button' => 'Add Tab',
-			'type'     => $this->token, // Custom field
-			'tab'      => $this->token,
-			'priority' => ++$priority,
-		);
-
-		// Accordion fields
-		$fields[ $this->token . '-accordion_data' ] = array(
+		$fields[ $this->token . '-tabs_accordion' ] = array(
 			'name'     => 'Accordion',
 			'fields'     => 'Title:text|Content:textarea',
 			'type'     => $this->token, // Custom field

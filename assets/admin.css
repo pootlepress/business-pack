@@ -1,0 +1,38 @@
+.field.field_type-ppb-business-pack-pro span label input {
+	display: none;
+}
+.field.field_type-ppb-business-pack-pro span label {
+	width: auto;
+	margin: 0;
+	padding: 7px 12px;
+	border-radius: 5px;
+	margin: 5px;
+	background: #eee;
+}
+
+.field.field_type-ppb-business-pack-pro span + span {
+	text-align: center;
+}
+
+.ppb-tabs-panel .field .ppb-biz-ta-data {
+	padding:5px;
+	display:none;
+}
+
+.ppb-tabs-panel .field .ppb-biz-ta:checked ~ .ppb-biz-ta-data {
+	display:block;
+}
+
+.ppb-biz-ta .ppb-biz-ta-data button {
+	display: block;
+	margin: auto;
+	width: 115px;
+}
+
+.field.field_type-ppb-business-pack-pro section * {
+	width: 100%;
+}
+
+.field.field_type-ppb-business-pack-pro section div {
+	padding:5px;
+}
