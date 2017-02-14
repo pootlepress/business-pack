@@ -5,6 +5,13 @@
  * @version 1.0.0
  */
 
+/**
+ * Plugin front end scripts
+ *
+ * @package Pootle_Pagebuilder_Business_Pack
+ * @version 1.0.0
+ */
+
 /* Testimonials */
 .ppb-biz-testimonial {
 	position: relative;
@@ -51,4 +58,62 @@
 #ppb-biz-gmap iframe {
 	display: block;
 	margin: auto;
+}
+
+/* Tabs and accordions */
+
+.ppb-biz-link {
+	display: inline-block;
+	padding: 1em 1.6em;
+	margin: 0 2px 0 0;
+	background: rgba(255, 255, 255, 0.07);
+	border: 1px solid rgba(0,0,0,0.1);
+	border-bottom: 0;
+}
+
+.ppb-biz-link.active {
+	border-color: rgba(0,0,0, 0.5);
+	background: rgba(255,255,255,0.25);
+}
+
+.ppb-biz-tabs .ppb-biz-content {
+	display: none;
+	border: 1px solid rgba(0,0,0,0.5);
+}
+
+.ppb-biz-content {
+	background: rgba(255,255,255,0.25);
+	padding: 1em;
+}
+
+.ppb-biz-content.active {
+	display: block;
+}
+
+.ppb-biz-accordion .ppb-biz-link {
+	display: block;
+	padding: 1em 1.6em;
+	background: rgba(255, 255, 255, 0.07);
+	margin: 0;
+	border: none;
+	border-top: 1px solid rgba(0,0,0,0.1);
+	position: relative;
+}
+.ppb-biz-accordion .ppb-biz-link.active .fa:before {
+	content: "\f068";
+}
+.ppb-biz-accordion .ppb-biz-link .fa {
+	position: absolute;
+	right: 0;
+	top: 50%;
+	line-height: 20px;
+	margin: -9px 1.6em 0;
+}
+
+.ppb-biz-accordion .ppb-biz-link:first-of-type {
+	border-top: none;
+}
+
+.ppb-biz-accordion {
+	border: 1px solid rgba(0,0,0,0.1);
 }

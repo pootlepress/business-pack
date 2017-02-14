@@ -64,7 +64,10 @@ class Pootle_Pagebuilder_Business_Pack_Admin{
 	 */
 	public function custom_field( $id, $args = array() ) {
 		?>
-		<input type="hidden"/>
+		<input type="hidden"
+		       dialog-field='<?php echo $id ?>_data'
+		       class="content-block-<?php echo $id ?>_data"
+		       data-style-field-type='multi-setting'>
 		<?php
 		$args = wp_parse_args( $args, array(
 			'fields' => 'Content:textarea',
@@ -73,20 +76,20 @@ class Pootle_Pagebuilder_Business_Pack_Admin{
 		) );
 		$fs = explode( '|', $args['fields'] );
 
-		$radio_attrs = " name='panelsStyle[$id]'
-			         data-style-field='$id'
-			         data-style-field-type='multi-setting'";
+		$radio_attrs =
+			"name='panelsStyle[$id]' class='content-block-$id'" .
+			"dialog-field='$id' data-style-field-type='radio'";
 		?>
 		</span>
 		<span style="width: 100%;max-width: 100%;">
 
-		<input type="radio" id="ppb-biz-ta-none" <?php echo $radio_attrs ?>>
+		<input type="radio" value="" id="ppb-biz-ta-none" <?php echo $radio_attrs ?>>
 		<label for="ppb-biz-ta-none">		None		</label>
 
-		<input type="radio" class="ppb-biz-ta" id="ppb-biz-ta-tabs" <?php echo $radio_attrs ?>>
+		<input type="radio" value="tabs" class="ppb-biz-ta" id="ppb-biz-ta-tabs" <?php echo $radio_attrs ?>>
 		<label for="ppb-biz-ta-tabs">		Tabs		</label>
 
-		<input type="radio" class="ppb-biz-ta" id="ppb-biz-ta-accordion" <?php echo $radio_attrs ?>>
+		<input type="radio" value="accordion" class="ppb-biz-ta" id="ppb-biz-ta-accordion" <?php echo $radio_attrs ?>>
 		<label for="ppb-biz-ta-accordion">	Accordion	</label>
 
 		<div class="ui-section-ref" style="display:none" >
@@ -94,14 +97,14 @@ class Pootle_Pagebuilder_Business_Pack_Admin{
 			foreach( $fs as $f ) {
 				$field = explode( ':', $f );
 				if ( $field[1] == 'textarea' ) {
-					echo "<textarea style='width:100%' placeholder='{$field[0]}'></textarea>";
+					echo "<textarea class='ppb-biz-multi-setting-field' style='width:100%' placeholder='{$field[0]}'></textarea>";
 				} else {
-					echo "<input style='width:100%' placeholder='{$field[0]}' type='{$field[1]}'>";
+					echo "<input class='ppb-biz-multi-setting-field' style='width:100%' placeholder='{$field[0]}' type='{$field[1]}'>";
 				}
 			}
 			?>
 		</div>
-		<section class="ppb-biz-ta-data">
+		<section class="ppb-biz-ta-section-fields">
 			<button onclick='ppbBizProCustomField(this)'><?php echo $args['button'] ?></button>
 		</section>
 		<?php
@@ -154,7 +157,6 @@ class Pootle_Pagebuilder_Business_Pack_Admin{
 		);
 
 		// Tabs fields
-
 		$fields[ $this->token . '-tabs_accordion' ] = array(
 			'name'     => 'Accordion',
 			'fields'     => 'Title:text|Content:textarea',
@@ -168,7 +170,7 @@ class Pootle_Pagebuilder_Business_Pack_Admin{
 
 	/**
 	 * Adds content block panel fields
-	 * @param array $fields Fields to output in content block panel
+	 * @param array $modules Modules data
 	 * @return array Tabs
 	 * @filter pootlepb_modules
 	 * @since 	1.0.0
@@ -197,5 +199,4 @@ class Pootle_Pagebuilder_Business_Pack_Admin{
 		);
 		return $modules;
 	}
-
 }

@@ -1,13 +1,13 @@
 <?php
 /*
-Plugin Name: Pootle Pagebuilder Business Pack Pro
-Plugin URI: http://pootlepress.com/
-Description: Boilerplate for fast track Pootle Page Builder Addon Development
-Author: Shramee
-Version: 1.0.0
-Author URI: http://shramee.com/
-@developer shramee <shramee.srivastav@gmail.com>
-*/
+ * Plugin Name: Pootle Pagebuilder Business Pack Pro
+ * Plugin URI: http://pootlepress.com/
+ * Description: Boilerplate for fast track Pootle Page Builder Addon Development
+ * Author: Shramee
+ * Version: 1.0.0
+ * Author URI: http://shramee.me/
+ * @developer shramee <me@shramee.me>
+ */
 
 /** Plugin admin class */
 require 'inc/class-admin.php';
@@ -143,10 +143,6 @@ class Pootle_Pagebuilder_Business_Pack{
 		//Instantiating admin class
 		$this->admin = Pootle_Pagebuilder_Business_Pack_Admin::instance();
 
-		//Row settings panel tabs
-		add_filter( 'pootlepb_row_settings_tabs',		array( $this->admin, 'row_settings_tabs' ) );
-		//Row settings panel fields
-		add_filter( 'pootlepb_row_settings_fields',		array( $this->admin, 'row_settings_fields' ) );
 		//Content block panel tabs
 		add_filter( 'pootlepb_content_block_tabs',		array( $this->admin, 'content_block_tabs' ) );
 		add_filter( 'pootlepb_le_content_block_tabs',	array( $this->admin, 'content_block_tabs' ) );

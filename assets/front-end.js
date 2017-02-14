@@ -7,8 +7,6 @@
 jQuery(function ($) {
 
 	var animate_increment = function ( num, target, $el ) {
-
-		console.log( num, target, $el );
 		var increment = Math.floor( ( target - num ) / 30 );
 		var interval = setInterval( function () {
 			num += increment;
@@ -28,4 +26,18 @@ jQuery(function ($) {
 		animate_increment( num % 5, num, $t );
 	} );
 
+	ppbBizProContent = {
+		tabs: function( e, t, i ) {
+			e.preventDefault();
+			var
+				$t = $( t ),
+				$p = $t.closest( '.ppb-biz-tabs' );
+			$t.addClass('active').siblings().removeClass('active');
+			$p.find( '.ppb-biz-content' ).removeClass('active').eq( i ).addClass('active');
+		},
+		accordion: function( e, t ) {
+			e.preventDefault();
+			$( t ).toggleClass( 'active' ).next('.ppb-biz-content').slideToggle();
+		}
+	};
 });

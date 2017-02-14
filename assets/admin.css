@@ -14,25 +14,30 @@
 	text-align: center;
 }
 
-.ppb-tabs-panel .field .ppb-biz-ta-data {
+.ppb-tabs-panel .field .ppb-biz-ta-section-fields {
 	padding:5px;
 	display:none;
 }
 
-.ppb-tabs-panel .field .ppb-biz-ta:checked ~ .ppb-biz-ta-data {
+.ppb-tabs-panel .field .ppb-biz-ta:checked ~ .ppb-biz-ta-section-fields {
 	display:block;
 }
 
-.ppb-biz-ta .ppb-biz-ta-data button {
-	display: block;
-	margin: auto;
-	width: 115px;
+.ppb-biz-ta-section-fields button {
+	display: block !important;
+	margin: auto !important;
+	max-width: 115px;
+}
+
+.ppb-biz-ta-section-fields textarea {
+	height: 7em;
 }
 
 .field.field_type-ppb-business-pack-pro section * {
 	width: 100%;
 }
 
-.field.field_type-ppb-business-pack-pro section div {
-	padding:5px;
+.ppb-biz-ta-section-fields div {
+	padding:14px 7px 0;
+	max-width: 50%;
 }
