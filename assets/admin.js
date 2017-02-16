@@ -17,9 +17,9 @@ jQuery( function ( $ ) {
 		};
 
 		window.ppbModules.ppbBizNumber = function ( $t, ed, $ed ) {
-			var num = parseInt( prompt( 'Type in the number to count to...' ) );
+			var num = parseInt( prompt( "Type in the number to count to... \n Color and text size can be adjusted just like plain text." ) );
 			while ( ! num ) {
-				num = parseInt( prompt( 'Input should be a number...' ) );
+				num = parseInt( prompt( "Input should be a number... \n Color and text size can be adjusted just like plain text." ) );
 			}
 			ed.execCommand(
 				'mceInsertContent', false,
