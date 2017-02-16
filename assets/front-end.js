@@ -18,7 +18,7 @@ jQuery(function ($) {
 		}, 40 );
 	};
 
-	$( '.ppb-biz-number-counter .ppb-biz-number' ).each( function () {
+	$( 'body:not(.pootle-live-editor-active) .ppb-biz-number-counter .ppb-biz-number' ).each( function () {
 		var
 			$t = $( this ),
 			num = parseInt( $t.text() );

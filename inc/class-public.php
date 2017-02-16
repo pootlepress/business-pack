@@ -99,7 +99,7 @@ class Pootle_Pagebuilder_Business_Pack_Public {
 		foreach ( $this->_sets->tabs_accordion_data as $i => $item ) {
 			echo
 			"<a class='ppb-biz-link' href='#' onclick='ppbBizProContent.accordion(event, this, $i)'>$item[Title]<i class='fa fa-plus'></i></a>";
-			echo "<div class='ppb-biz-content' style='display: none;'>$item[Content]</div>";
+			echo wpautop( "<div class='ppb-biz-content' style='display: none;'>$item[Content]</div>" );
 		}
 	}
 
@@ -113,7 +113,7 @@ class Pootle_Pagebuilder_Business_Pack_Public {
 				echo
 					"<a class='ppb-biz-link $class' href='#' onclick='ppbBizProContent.tabs(event, this, $i)'>$item[Title]</a>";
 				$content .=
-					"<div class='ppb-biz-content $class'>$item[Content]</div>";
+					wpautop( "<div class='ppb-biz-content $class'>$item[Content]</div>" );
 			}
 			?>
 		</div>

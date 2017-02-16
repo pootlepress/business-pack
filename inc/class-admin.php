@@ -93,6 +93,7 @@ class Pootle_Pagebuilder_Business_Pack_Admin{
 		<label for="ppb-biz-ta-accordion">	Accordion	</label>
 
 		<div class="ui-section-ref" style="display:none" >
+			<i class="fa fa-minus-circle" onclick="jQuery(this).parent().remove()"></i>
 			<?php
 			foreach( $fs as $f ) {
 				$field = explode( ':', $f );
@@ -135,6 +136,10 @@ class Pootle_Pagebuilder_Business_Pack_Admin{
 			'label' => 'Business Pack',
 			'priority' => 5,
 		);
+		$tabs[ $this->token . '-ta' ] = array(
+			'label' => 'Tabs/Accordion',
+			'priority' => 5,
+		);
 		return $tabs;
 	}
 
@@ -161,7 +166,7 @@ class Pootle_Pagebuilder_Business_Pack_Admin{
 			'name'     => 'Accordion',
 			'fields'     => 'Title:text|Content:textarea',
 			'type'     => $this->token, // Custom field
-			'tab'      => $this->token,
+			'tab'      => $this->token . '-ta',
 			'priority' => ++$priority,
 		);
 
