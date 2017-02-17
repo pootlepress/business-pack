@@ -2,10 +2,10 @@
 /*
  * Plugin Name: Pootle Pagebuilder Business Pack Pro
  * Plugin URI: http://pootlepress.com/
- * Description: Boilerplate for fast track Pootle Page Builder Addon Development
- * Author: Shramee
+ * Description: Add Tabs, Accordions, Testimonials, Incrementing numbers and Google Maps easily in Pootle Pagebuilder Pro
+ * Author: Pootlepress
  * Version: 1.0.0
- * Author URI: http://shramee.me/
+ * Author URI: http://pootlepress.com/
  * @developer shramee <me@shramee.me>
  */
 

@@ -202,6 +202,13 @@ class Pootle_Pagebuilder_Business_Pack_Admin{
 			'tab'    => '#pootle-' . $this->token . '-tab',
 			'priority'    => 10,
 		);
+		$modules['ppb-biz-tabs-accordion'] = array(
+			'label'       => 'Accordion / Tabs',
+			'icon_class'  => 'fa fa-archive',
+			'ActiveClass' => 'Pootle_Pagebuilder_Business_Pack',
+			'tab'    => '#pootle-' . $this->token . '-ta-tab',
+			'priority'    => 10,
+		);
 		return $modules;
 	}
 }

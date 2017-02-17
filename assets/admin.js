@@ -16,6 +16,14 @@ jQuery( function ( $ ) {
 
 		};
 
+		/*
+		window.ppbModules.ppbBizAccordion = function ( $t, ed, $ed ) {
+			$t.closest('.ppb-block').find('.ppb-edit-block').find('.ui-draggable-handle').click();
+			var style = JSON.parse( ppbData.widgets[ppbPanelI].info.style );
+			style['ppb-business-pack-pro-tabs_accordion'] = 'accordion';
+			ppbData.widgets[ppbPanelI].info.style = JSON.stringify( style );
+		};
+	*/
 		window.ppbModules.ppbBizNumber = function ( $t, ed, $ed ) {
 			var num = parseInt( prompt( "Type in the number to count to... \n Color and text size can be adjusted just like plain text." ) );
 			while ( ! num ) {
