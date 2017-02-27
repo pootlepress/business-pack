@@ -1,7 +1,7 @@
 /**
  * Plugin front end scripts
  *
- * @package Pootle_Pagebuilder_Business_Pack
+ * @package Pootle_Business_Pack
  * @version 1.0.0
  */
 jQuery(function ($) {

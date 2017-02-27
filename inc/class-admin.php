@@ -1,24 +1,24 @@
 <?php
 /**
- * Pootle Pagebuilder Business Pack Pro Admin class
+ * Business pack Admin class
  * @property string token Plugin token
  * @property string $url Plugin root dir url
  * @property string $path Plugin root dir path
  * @property string $version Plugin version
  */
-class Pootle_Pagebuilder_Business_Pack_Admin{
+class Pootle_Business_Pack_Admin{
 
 	/**
-	 * @var 	Pootle_Pagebuilder_Business_Pack_Admin Instance
+	 * @var 	Pootle_Business_Pack_Admin Instance
 	 * @access  private
 	 * @since 	1.0.0
 	 */
 	private static $_instance = null;
 
 	/**
-	 * Main Pootle Pagebuilder Business Pack Pro Instance
+	 * Main Business pack Instance
 	 * Ensures only one instance of Storefront_Extension_Boilerplate is loaded or can be loaded.
-	 * @return Pootle_Pagebuilder_Business_Pack_Admin instance
+	 * @return Pootle_Business_Pack_Admin instance
 	 * @since 	1.0.0
 	 */
 	public static function instance() {
@@ -34,10 +34,10 @@ class Pootle_Pagebuilder_Business_Pack_Admin{
 	 * @since 	1.0.0
 	 */
 	private function __construct() {
-		$this->token   =   Pootle_Pagebuilder_Business_Pack::$token;
-		$this->url     =   Pootle_Pagebuilder_Business_Pack::$url;
-		$this->path    =   Pootle_Pagebuilder_Business_Pack::$path;
-		$this->version =   Pootle_Pagebuilder_Business_Pack::$version;
+		$this->token   =   Pootle_Business_Pack::$token;
+		$this->url     =   Pootle_Business_Pack::$url;
+		$this->path    =   Pootle_Business_Pack::$path;
+		$this->version =   Pootle_Business_Pack::$version;
 	} // End __construct()
 
 	/**
@@ -59,7 +59,7 @@ class Pootle_Pagebuilder_Business_Pack_Admin{
 	 * Adds front end stylesheet and js
 	 * @param string $id
 	 * @param array $args
-	 * @action pootlepb_content_block_custom_field_{Pootle_Pagebuilder_Business_Pack::$token}
+	 * @action pootlepb_content_block_custom_field_{Pootle_Business_Pack::$token}
 	 * @since 1.0.0
 	 */
 	public function custom_field( $id, $args = array() ) {
@@ -184,28 +184,28 @@ class Pootle_Pagebuilder_Business_Pack_Admin{
 		$modules['ppb-biz-testimonial'] = array(
 			'label'       => 'Testimonial',
 			'icon_class'  => 'dashicons dashicons-testimonial',
-			'ActiveClass' => 'Pootle_Pagebuilder_Business_Pack',
+			'ActiveClass' => 'Pootle_Business_Pack',
 			'callback'    => 'ppbBizTestimonial',
 			'priority'    => 10,
 		);
 		$modules['ppb-biz-number'] = array(
 			'label'       => 'Number counter',
 			'icon_class'  => 'fa fa-sort-numeric-asc',
-			'ActiveClass' => 'Pootle_Pagebuilder_Business_Pack',
+			'ActiveClass' => 'Pootle_Business_Pack',
 			'callback'    => 'ppbBizNumber',
 			'priority'    => 10,
 		);
 		$modules['ppb-biz-gmap'] = array(
 			'label'       => 'Google map',
 			'icon_class'  => 'fa fa-map',
-			'ActiveClass' => 'Pootle_Pagebuilder_Business_Pack',
+			'ActiveClass' => 'Pootle_Business_Pack',
 			'tab'    => '#pootle-' . $this->token . '-tab',
 			'priority'    => 10,
 		);
 		$modules['ppb-biz-tabs-accordion'] = array(
 			'label'       => 'Accordion / Tabs',
 			'icon_class'  => 'fa fa-archive',
-			'ActiveClass' => 'Pootle_Pagebuilder_Business_Pack',
+			'ActiveClass' => 'Pootle_Business_Pack',
 			'tab'    => '#pootle-' . $this->token . '-ta-tab',
 			'priority'    => 10,
 		);

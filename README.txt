@@ -16,8 +16,14 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 == Description ==
 
 = Business pack =
-The business Pack includes a number of new drag and drop modules.
-Modules included, number counter, accordian, tabs, testimonials and maps.
+
+The Business Pro Pack includes a number of cool new drag and drop modules:
+
+* Number counter
+* Accordian
+* Tabs
+* Testimonials
+* Google maps
 
 == Installation ==
 

@@ -1,6 +1,6 @@
 <?php
 /*
- * Plugin Name: Pootle Pagebuilder Business Pack Pro
+ * Plugin Name: Business pack
  * Plugin URI: http://pootlepress.com/
  * Description: Add Tabs, Accordions, Testimonials, Incrementing numbers and Google Maps easily in Pootle Pagebuilder Pro.
  * Author: Pootlepress
@@ -14,20 +14,20 @@ require 'inc/class-admin.php';
 /** Plugin public class */
 require 'inc/class-public.php';
 /** Intantiating main plugin class */
-Pootle_Pagebuilder_Business_Pack::instance( __FILE__ );
+Pootle_Business_Pack::instance( __FILE__ );
 
 /**
- * Pootle Pagebuilder Business Pack Pro main class
+ * Business pack main class
  * @static string $token Plugin token
  * @static string $file Plugin __FILE__
  * @static string $url Plugin root dir url
  * @static string $path Plugin root dir path
  * @static string $version Plugin version
  */
-class Pootle_Pagebuilder_Business_Pack{
+class Pootle_Business_Pack{
 
 	/**
-	 * @var 	Pootle_Pagebuilder_Business_Pack Instance
+	 * @var 	Pootle_Business_Pack Instance
 	 * @access  private
 	 * @since 	1.0.0
 	 */
@@ -69,26 +69,26 @@ class Pootle_Pagebuilder_Business_Pack{
 	public static $path;
 
 	/**
-	 * @var 	Pootle_Pagebuilder_Business_Pack_Admin Instance
+	 * @var 	Pootle_Business_Pack_Admin Instance
 	 * @access  public
 	 * @since 	1.0.0
 	 */
 	public $admin;
 
 	/**
-	 * @var 	Pootle_Pagebuilder_Business_Pack_Public Instance
+	 * @var 	Pootle_Business_Pack_Public Instance
 	 * @access  public
 	 * @since 	1.0.0
 	 */
 	public $public;
 
 	/**
-	 * Main Pootle Pagebuilder Business Pack Pro Instance
+	 * Main Business pack Instance
 	 *
 	 * Ensures only one instance of Storefront_Extension_Boilerplate is loaded or can be loaded.
 	 *
 	 * @since 1.0.0
-	 * @return Pootle_Pagebuilder_Business_Pack instance
+	 * @return Pootle_Business_Pack instance
 	 */
 	public static function instance( $file ) {
 		if ( null == self::$_instance ) {
@@ -141,7 +141,7 @@ class Pootle_Pagebuilder_Business_Pack{
 	 */
 	private function _admin() {
 		//Instantiating admin class
-		$this->admin = Pootle_Pagebuilder_Business_Pack_Admin::instance();
+		$this->admin = Pootle_Business_Pack_Admin::instance();
 
 		//Content block panel tabs
 		add_filter( 'pootlepb_content_block_tabs',		array( $this->admin, 'content_block_tabs' ) );
@@ -162,7 +162,7 @@ class Pootle_Pagebuilder_Business_Pack{
 	 */
 	private function _public() {
 		//Instantiating public class
-		$this->public = Pootle_Pagebuilder_Business_Pack_Public::instance();
+		$this->public = Pootle_Business_Pack_Public::instance();
 
 		//Adding front end JS and CSS in /assets folder
 		add_action( 'wp_enqueue_scripts',					array( $this->public, 'enqueue' ) );
