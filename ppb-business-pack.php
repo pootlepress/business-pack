@@ -2,7 +2,7 @@
 /*
  * Plugin Name: Pootle Pagebuilder Business Pack Pro
  * Plugin URI: http://pootlepress.com/
- * Description: Add Tabs, Accordions, Testimonials, Incrementing numbers and Google Maps easily in Pootle Pagebuilder Pro
+ * Description: Add Tabs, Accordions, Testimonials, Incrementing numbers and Google Maps easily in Pootle Pagebuilder Pro.
  * Author: Pootlepress
  * Version: 1.0.0
  * Author URI: http://pootlepress.com/
