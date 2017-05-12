@@ -6,24 +6,27 @@
  */
 jQuery(function ($) {
 
-	var animate_increment = function ( num, target, $el ) {
-		var increment = Math.floor( ( target - num ) / 30 );
+	var animate_increment = function ( target, $el ) {
+		var increment = Math.max( 1, Math.floor( ( target ) / 20 ) );
+		var num = target % increment;
 		var interval = setInterval( function () {
 			num += increment;
-			$el.text( num );
 			if ( num >= target ) {
-				$el.text( target );
+				num = target;
 				clearInterval( interval );
 			}
+			$el.text( num );
 		}, 40 );
 	};
 
 	$( 'body:not(.pootle-live-editor-active) .ppb-biz-number-counter .ppb-biz-number' ).each( function () {
 		var
 			$t = $( this ),
-			num = parseInt( $t.text() );
-		$t.text( 0 );
-		animate_increment( num % 5, num, $t );
+			target = parseInt( $t.text() );
+		if ( ! isNaN( target ) ) {
+			$t.text( 0 );
+			animate_increment( target, $t );
+		}
 	} );
 
 	ppbBizProContent = {
