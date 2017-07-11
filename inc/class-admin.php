@@ -185,6 +185,7 @@ class Pootle_Business_Pack_Admin{
 			'label'       => 'Testimonial',
 			'icon_class'  => 'dashicons dashicons-testimonial',
 			'ActiveClass' => 'Pootle_Business_Pack',
+			'active_class' => 'Pootle_Business_Pack',
 			'callback'    => 'ppbBizTestimonial',
 			'priority'    => 10,
 		);
@@ -192,6 +193,7 @@ class Pootle_Business_Pack_Admin{
 			'label'       => 'Number counter',
 			'icon_class'  => 'fa fa-sort-numeric-asc',
 			'ActiveClass' => 'Pootle_Business_Pack',
+			'active_class' => 'Pootle_Business_Pack',
 			'callback'    => 'ppbBizNumber',
 			'priority'    => 10,
 		);
@@ -199,6 +201,7 @@ class Pootle_Business_Pack_Admin{
 			'label'       => 'Google map',
 			'icon_class'  => 'fa fa-map',
 			'ActiveClass' => 'Pootle_Business_Pack',
+			'active_class' => 'Pootle_Business_Pack',
 			'tab'    => '#pootle-' . $this->token . '-tab',
 			'priority'    => 10,
 		);
@@ -206,6 +209,7 @@ class Pootle_Business_Pack_Admin{
 			'label'       => 'Accordion / Tabs',
 			'icon_class'  => 'fa fa-archive',
 			'ActiveClass' => 'Pootle_Business_Pack',
+			'active_class' => 'Pootle_Business_Pack',
 			'tab'    => '#pootle-' . $this->token . '-ta-tab',
 			'priority'    => 10,
 		);
